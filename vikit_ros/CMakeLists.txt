@@ -5,7 +5,7 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
 
-add_compile_options(-std=c++14)
+add_compile_options(-std=c++17)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -O3")
 add_definitions(-DROOT_DIR=\"${CMAKE_CURRENT_SOURCE_DIR}/\")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fexceptions")

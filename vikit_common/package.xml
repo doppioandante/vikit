@@ -11,15 +11,19 @@
  <!-- One license tag required, multiple allowed, one license per tag -->
  <license>GPLv3</license>
 
- <!-- Buildtool dependencies -->
- <buildtool_depend>ament_cmake</buildtool_depend>
+<buildtool_depend>ament_cmake</buildtool_depend>
 
- <!-- Build dependencies -->
- <build_depend>rclcpp</build_depend>
- <build_depend>cmake_modules</build_depend> <!-- for FindEigen.cmake module -->
- 
- <!-- Run dependencies -->
- <exec_depend>rclcpp</exec_depend>
+<build_depend>rclcpp</build_depend>
+<build_depend>eigen3_cmake_module</build_depend>
+<build_depend>opencv</build_depend>
+<build_depend>fmt</build_depend>
+<build_depend>sophus</build_depend> <!-- se esiste come pacchetto ROS -->
+
+<exec_depend>rclcpp</exec_depend>
+<exec_depend>eigen3_cmake_module</exec_depend>
+<exec_depend>opencv</exec_depend>
+<exec_depend>fmt</exec_depend>
+<exec_depend>sophus</exec_depend>
 
  <!-- The export tag contains other, unspecified, tags -->
  <export>

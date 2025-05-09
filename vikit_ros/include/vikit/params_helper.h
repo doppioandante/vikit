@@ -40,7 +40,7 @@ T getParam(const rclcpp::Node::SharedPtr &nh, const std::string& name, const T& 
 } */
 
 template<typename T>
-T getParam(const rclcpp::Node::SharedPtr &nh, const std::string& name, const T& defaultValue)
+inline T getParam(const rclcpp::Node::SharedPtr &nh, const std::string& name, const T& defaultValue)
 {
   T v;
   if(nh->has_parameter(name))
@@ -58,7 +58,7 @@ T getParam(const rclcpp::Node::SharedPtr &nh, const std::string& name, const T& 
 }
   
 template<>
-std::string getParam<std::string>(const rclcpp::Node::SharedPtr &nh, const std::string& name, const std::string& defaultValue)
+inline std::string getParam<std::string>(const rclcpp::Node::SharedPtr &nh, const std::string& name, const std::string& defaultValue)
 {
   std::string v;
   if(nh->has_parameter(name))
@@ -92,7 +92,7 @@ T getParam(const rclcpp::Node::SharedPtr &nh, const std::string& name)
 
 	 
 template<typename T>
-typename std::enable_if<!std::is_same<T, std::string>::value, T>::type
+inline typename std::enable_if<!std::is_same<T, std::string>::value, T>::type
 getParam(const rclcpp::Node::SharedPtr &nh, const std::string& name)
 {
   T v;
@@ -108,7 +108,7 @@ getParam(const rclcpp::Node::SharedPtr &nh, const std::string& name)
 }
   
 template<typename T>
-typename std::enable_if<std::is_same<T, std::string>::value, T>::type
+inline typename std::enable_if<std::is_same<T, std::string>::value, T>::type
 getParam(const rclcpp::Node::SharedPtr &nh, const std::string& name)
 {
   T v;
